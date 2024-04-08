@@ -1,20 +1,381 @@
-//====================================================================================================
+//========================================================================================================================================================
 
-//====================================================================================================
+.header {
+	background: var(--seryy-temnyy);
+	padding: rem(20) 0;
+
+	@media (max-width:$md) {
+		padding: rem(10) 0;
+	}
+
+	// .header__container
+
+	&__container {
+		display: grid;
+		grid-template-columns: 265px 1fr auto;
+		gap: 150px;
+
+		@media (max-width:$xxl) {
+			gap: 47px;
+		}
+
+		@media (max-width:$xl) {
+			grid-template-columns: 205px 1fr auto;
+		}
+
+		@media (max-width:$md) {
+			grid-template-columns: 163px 1fr auto;
+		}
+	}
+
+	// .header__logo
+
+	&__logo {
+		img {
+			max-width: 100%;
+		}
+	}
+
+	// .header__menu
+
+	&__menu {
+		align-self: center;
+
+		@media (max-width:$xl) {
+			grid-column: 3/4;
+		}
+	}
+
+	// .header__contacts
+
+	&__contacts {
+		display: grid;
+		grid-auto-rows: auto;
+		align-self: start;
+		gap: 10px;
+
+		@media (max-width:$xl) {
+			grid-column: 2/3;
+			grid-row: 1/2;
+			justify-self: end;
+			gap: 4px;
+		}
+
+		@media (max-width:$md) {
+			margin-top: rem(80);
+			gap: 15px;
+			justify-content: center;
+		}
+	}
+
+	// .header__tel
+
+	&__tel {
+		font-family: var(--second-family);
+		font-weight: 700;
+		font-size: 28px;
+		line-height: 120%;
+		color: #fff;
+
+		@media (max-width:$xl) {
+			font-size: 24px;
+		}
+
+		@media (max-width:$md) {
+			font-family: var(--font3);
+			font-weight: 400;
+			font-size: 20px;
+		}
+	}
+
+	// .header__callback
+
+	&__callback {
+		font-size: 16px;
+		padding: 14px 25px;
+
+		@media (max-width:$xl) {
+			padding: rem(9) 0;
+		}
+
+		@media (max-width:$md) {
+			padding: rem(14) 0;
+		}
+	}
+}
+
+.menu {
+
+	// .menu__icon
+
+	&__icon {}
+
+	// .menu__body
+
+	&__body {
+		@extend %hidescroll;
+
+		@media (max-width:$xl) {
+			position: fixed;
+			top: 103px;
+			bottom: 32px;
+			left: 40px;
+			right: 40px;
+			transform: translate(calc(100% + 40px), 0);
+			background: var(--seryy-temnyy);
+			overflow: auto;
+			padding: rem(30) 0;
+			z-index: 150;
+			border-radius: 0 0 20px 20px;
+
+			.menu-open & {
+				transition: transform 0.3s ease 0s;
+				transform: translate(0px, 0px);
+			}
+		}
+
+		@media (max-width:$lg) {
+			@include adaptiveValue("left", 40, 16, 0, 991.98, 767.98);
+			@include adaptiveValue("right", 40, 16, 0, 991.98, 767.98);
+		}
+
+		@media (max-width:$md) {
+			top: 72px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+
+	// .menu__list
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px 40px;
+
+		@media (max-width:$xxl) {
+			gap: 20px;
+		}
+
+		@media (max-width:$xl) {
+			display: grid;
+			text-align: center;
+			gap: 0px;
+		}
+	}
+
+	// .menu__item
+
+	&__item {
+		@media (max-width:$xl) {
+			width: 100%;
+		}
+
+		.dropdown__block {
+			z-index: 2;
+			left: -30px;
+			top: calc(100% + 13px);
+
+			@media (max-width:$xl) {
+				position: static;
+				height: 0;
+				background: rgba(81, 81, 81, 0.3);
+				border-radius: 0;
+				min-width: 0;
+			}
+		}
+
+		&._dd-active {
+			.dropdown__block {
+				@media (max-width:$xl) {
+					height: auto;
+				}
+			}
+
+		}
+	}
+
+	// .menu__link
+
+	&__link {
+		font-weight: 500;
+		font-size: 16px;
+
+		@media (max-width:$xl) {
+			font-size: 24px;
+			padding: rem(30) 0;
+			display: flex;
+			justify-content: center;
+
+			&.dropdown__button {}
+		}
+
+		._dd-active & {
+			@media (min-width:$xl) {
+				font-weight: 700;
+				color: var(--zelenyy);
+
+				&::after {
+					background: url("../img/icons/arrow-dropdown-active.svg") center no-repeat;
+				}
+			}
+
+			@media (max-width:$xl) {
+				background: var(--seryy-svetlyy);
+			}
+		}
+	}
+}
+
+//========================================================================================================================================================
+.submenu {
+	background: #f5f5f5;
+	color: #000;
+	border-radius: 20px;
+	overflow: hidden;
+
+	@media (max-width:$xl) {
+		background: rgba(81, 81, 81, 0.3);
+		color: #fff;
+		border-radius: 0;
+	}
+
+	// .submenu__nav
+
+	&__nav {
+		min-width: 355px;
+		display: flex;
+		flex-direction: column;
+		gap: 29px;
+		max-height: calc(100vh - 100px);
+		height: 100%;
+		overflow: auto;
+		@extend %hidescroll;
+
+		@media (max-width:$xl) {
+			gap: 0;
+			min-width: 0;
+			overflow: visible;
+			max-height: 100%;
+		}
+	}
+
+	// .submenu__block
+
+	&__block {}
+
+	// .submenu__nav-link
+
+	&__nav-link {
+		font-weight: 500;
+		font-size: 24px;
+		padding: rem(40) rem(30);
+		display: block;
+
+		@media (min-width:$xl) {
+
+			&:hover {
+				background: var(--zelenyy);
+			}
+		}
+
+		@media (max-width:$xl) {
+			&[data-parent] {
+				display: flex;
+				justify-content: center;
+				gap: 10px;
+
+				&:after {
+					content: "";
+					display: block;
+					width: 24px;
+					height: 24px;
+					background: url("../img/icons/arrow-dropdown.svg") center no-repeat;
+					transition: all 0.3s ease 0s;
+				}
+
+				&._sub-menu-active {
+					&::after {
+						transform: rotate(-180deg);
+					}
+				}
+			}
+		}
+	}
+
+	// .submenu__links
+
+	&__links {
+		position: absolute;
+		top: 0;
+		left: calc(100% - 20px);
+		background: #e6e7e8;
+		height: 100%;
+		overflow: auto;
+		border-radius: 0 20px 20px 0;
+		flex-direction: column;
+		min-width: 417px;
+		padding: rem(20) 0;
+		@extend %hidescroll;
+
+		@media (max-width:$xl) {
+			position: static;
+			background: var(--seryy-temnyy);
+			min-width: 0;
+			border-radius: 0;
+			overflow: visible;
+			max-height: 100%;
+		}
+
+		&._sub-menu-open {
+			display: flex;
+		}
+	}
+
+	// .submenu__link
+
+	&__link {
+		display: block;
+		padding: rem(20) rem(30);
+		font-weight: 500;
+		font-size: 24px;
+
+		@media (min-width:$xl) {
+			&:hover {
+				background: var(--zelenyy);
+			}
+		}
+	}
+}
+
+//========================================================================================================================================================
+
 
 //Burger
-/*
+
 .icon-menu {
 	display: none;
-	@media (max-width: $md) {
+
+	@media (max-width: $xl) {
+		outline: none;
 		display: block;
 		position: relative;
-		width: rem(30);
-		height: rem(18);
+		width: rem(44);
+		height: rem(36);
 		z-index: 5;
+
+		@media (max-width:$md) {
+			width: rem(28);
+			height: rem(23);
+		}
+
 		@media (any-hover: none) {
 			cursor: default;
 		}
+
+		span {}
+
 		span,
 		&::before,
 		&::after {
@@ -23,34 +384,55 @@
 			right: 0;
 			position: absolute;
 			width: 100%;
-			height: rem(2);
-			background-color: #000;
+			height: rem(4);
+			background-color: #fff;
+			border-radius: 3px;
+
+			@media (max-width:$md) {
+				height: 3px;
+			}
 		}
+
 		&::before {
 			top: 0;
 		}
+
 		&::after {
 			bottom: 0;
 		}
+
 		span {
 			top: calc(50% - rem(1));
 		}
+
 		.menu-open & {
 			span {
 				width: 0;
+				position: static;
+
+				&::before {
+					content: '';
+					opacity: 1;
+					visibility: visible;
+				}
 			}
+
 			&::before,
 			&::after {
+				// background-color: var(--light-yellow);
+				height: rem(3);
+				z-index: 3;
 			}
+
 			&::before {
-				top: calc(50% - rem(1));
+				top: calc(50% - 1.5px);
 				transform: rotate(-45deg);
 			}
+
 			&::after {
-				bottom: calc(50% - rem(1));
+				bottom: calc(50% - 1.5px);
 				transform: rotate(45deg);
 			}
 		}
 	}
 }
-*/

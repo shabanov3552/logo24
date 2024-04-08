@@ -6,27 +6,28 @@ import { flsModules } from "./modules.js";
 //#region Глобальный клик
 
 document.addEventListener("click", function (e) {
+   sidebarCatalogActions(e)
    // открыть модалку каталога
-   if (bodyLockStatus && e.target.closest('.js-open-sidebar-catalog')) {
-      bodyLockToggle();
-      document.documentElement.classList.toggle("sidebar-catalog-open");
-      if (window.matchMedia("(min-width: 991.98px)").matches && !isMobile.any()) {
-         document.addEventListener("mouseover", sidebarCatalogActions);
-         document.removeEventListener("click", sidebarCatalogActions);
-      } else {
-         document.addEventListener("click", sidebarCatalogActions);
-         document.removeEventListener("mouseover", sidebarCatalogActions);
-      }
-   }
+   // if (bodyLockStatus && e.target.closest('.js-open-sidebar-catalog')) {
+   //    bodyLockToggle();
+   //    document.documentElement.classList.toggle("sidebar-catalog-open");
+   //    if (window.matchMedia("(min-width: 991.98px)").matches && !isMobile.any()) {
+   //       document.addEventListener("mouseover", sidebarCatalogActions);
+   //       document.removeEventListener("click", sidebarCatalogActions);
+   //    } else {
+   //       document.addEventListener("click", sidebarCatalogActions);
+   //       document.removeEventListener("mouseover", sidebarCatalogActions);
+   //    }
+   // }
    // закрыть модалку каталога
-   if (e.target.closest('.js-sidebar-catalog-close')) {
-      bodyLockToggle();
-      document.documentElement.classList.remove("sidebar-catalog-open", "sidebar-sub-catalog-open");
-   }
-   if (!e.target.closest('.sidebar-catalog') && document.querySelector('.sidebar-catalog-open') && !e.target.closest('.js-open-sidebar-catalog')) {
-      bodyLockToggle();
-      document.documentElement.classList.remove("sidebar-catalog-open", "sidebar-sub-catalog-open");
-   }
+   // if (e.target.closest('.js-sidebar-catalog-close')) {
+   //    bodyLockToggle();
+   //    document.documentElement.classList.remove("sidebar-catalog-open", "sidebar-sub-catalog-open");
+   // }
+   // if (!e.target.closest('.sidebar-catalog') && document.querySelector('.sidebar-catalog-open') && !e.target.closest('.js-open-sidebar-catalog')) {
+   //    bodyLockToggle();
+   //    document.documentElement.classList.remove("sidebar-catalog-open", "sidebar-sub-catalog-open");
+   // }
    // очистка input по клику на крестик
    if (e.target.closest('.form__clear-svg')) {
       let input = e.target.closest('.form__line').querySelector('.form__input') || e.target.closest('.form__line').querySelector('.form__txt');
@@ -236,44 +237,40 @@ if (sidebarCatalogMenuChunk !== null) {
 //#region Открыть/закрыть боковой каталог + Открытие закрытие подкатегорий в каталоге
 
 function sidebarCatalogActions(e) {
-   if (e.target.closest('[data-parent]')) {
-      const targetElement = e.target.closest('[data-parent]');
-      const subMenuId = targetElement.closest('[data-parent]').dataset.parent ? targetElement.closest('[data-parent]').dataset.parent : null;
+   const targetElement = e.target.closest('[data-parent]');
+   const activeLink = document.querySelector('._sub-menu-active');
+   const activeBlock = document.querySelector('._sub-menu-open');
+
+   if (targetElement) {
+      const subMenuId = targetElement.dataset.parent;
       const subMenu = document.querySelector(`[data-submenu="${subMenuId}"]`);
+
       if (subMenu) {
-         const activeLink = document.querySelector('._sub-menu-active');
-         const activeBlock = document.querySelector('._sub-menu-open');
+         if (activeLink !== targetElement) {
+            if (activeLink) {
+               activeLink.classList.remove('_sub-menu-active');
+               activeBlock.classList.remove('_sub-menu-open');
+               document.documentElement.classList.remove('sidebar-sub-catalog-open');
+            }
 
-
-         if (activeLink && activeLink !== targetElement) {
+            targetElement.classList.add('_sub-menu-active');
+            subMenu.classList.add('_sub-menu-open');
+            document.documentElement.classList.add('sidebar-sub-catalog-open');
+         } else {
             activeLink.classList.remove('_sub-menu-active');
             activeBlock.classList.remove('_sub-menu-open');
             document.documentElement.classList.remove('sidebar-sub-catalog-open');
          }
-         document.documentElement.classList.add('sidebar-sub-catalog-open');
-         targetElement.classList.add('_sub-menu-active');
-         subMenu.classList.add('_sub-menu-open');
          e.preventDefault();
-      } else {
-         const activeLink = document.querySelector('._sub-menu-active');
-         const activeBlock = document.querySelector('._sub-menu-open');
-
-
-         if (activeLink) {
-            activeLink.classList.remove('_sub-menu-active');
-            activeBlock.classList.remove('_sub-menu-open');
-            document.documentElement.classList.remove('sidebar-sub-catalog-open');
-         }
+      }
+   } else {
+      if (activeLink) {
+         activeLink.classList.remove('_sub-menu-active');
+         activeBlock.classList.remove('_sub-menu-open');
+         document.documentElement.classList.remove('sidebar-sub-catalog-open');
       }
    }
-   if (e.target.closest('.js-sidebar-catalog-back')) {
-      document.documentElement.classList.remove('sidebar-sub-catalog-open');
-      document.querySelector('._sub-menu-active') ? document.querySelector('._sub-menu-active').classList.remove('_sub-menu-active') : null;
-      document.querySelector('._sub-menu-open') ? document.querySelector('._sub-menu-open').classList.remove('_sub-menu-open') : null;
-      e.preventDefault();
-   }
 }
-
 //#endregion
 
 //#region Кнопка вверх и лого

@@ -14,7 +14,7 @@ input::-webkit-passman-key {
 }
 
 textarea {
-	min-height: 87px;
+	min-height: 52px;
 	resize: vertical;
 
 	&::-webkit-scrollbar {
@@ -31,10 +31,14 @@ textarea {
 	&__line {
 		position: relative;
 
+		&+.form__line {
+			margin-top: rem(60);
+		}
+
 		&._form-focus {
 			.form__label {
-				top: -20px;
-				left: 0;
+				// top: -20px;
+				// left: 0;
 				font-size: 12px;
 				line-height: 22px;
 			}
@@ -45,16 +49,17 @@ textarea {
 
 	&__label {
 		transition: all 0.3s ease 0s;
-		position: absolute;
-		top: 13px;
-		left: 16px;
-		color: rgba(0, 0, 0, 0.604535);
-		font-size: 18px;
+		// top: 13px;
+		// left: 16px;
+		padding-left: rem(15);
+		color: #fff;
+		font-size: 24px;
+		font-weight: 500;
 		line-height: 22px;
 		pointer-events: none;
 
 		.has-error & {
-			top: 35px;
+			// top: 35px;
 		}
 	}
 
@@ -62,20 +67,20 @@ textarea {
 
 	&__input {
 		outline: none;
-		background: #FFFFFF;
-		border: 1px solid rgba(0, 0, 0, 0.230742);
-		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
-		border-radius: 5px;
-		height: 48px;
-		padding: rem(16) rem(32) rem(16) rem(16);
+		background: transparent;
+		border-bottom: 1px solid #fff;
+		height: 26px;
+		padding: rem(0) rem(32) rem(0) rem(0);
 		width: 100%;
+		color: #fff;
+		font-size: 18px;
 
 		.has-error & {
-			border: 2px solid var(--red-error);
+			border-bottom: 1px solid var(--red-error);
 		}
 
 		&.parsley-error {
-			border: 2px solid var(--red-error);
+			border-bottom: 2px solid var(--red-error);
 		}
 	}
 
@@ -115,7 +120,7 @@ textarea {
 	&__viewpass {
 		width: 25px;
 		height: 23px;
-		background: url(../img/icons/icon_pass.svg);
+		background: url(@img/icons/icon_pass.svg);
 		position: absolute;
 		right: 40px;
 		top: 12px;
@@ -123,7 +128,7 @@ textarea {
 		opacity: 0;
 
 		&._viewpass-active {
-			background: url(../img/icons/icon_pass-active.svg);
+			background: url(@img/icons/icon_pass-active.svg);
 		}
 
 		._form-focus & {
@@ -134,12 +139,29 @@ textarea {
 			}
 		}
 	}
+
+	// .form__check
+
+	&__check {
+		margin: rem(40) 0 rem(60) 0;
+
+		@media (max-width:$sm) {
+			margin: rem(40) 0;
+		}
+	}
+
+	// .form__button
+
+	&__button {
+		width: 100%;
+	}
 }
 
 .parsley-errors-list {
+	position: absolute;
 	padding: rem(10) 0;
 	color: var(--red-error);
-	margin-bottom: rem(-20);
+	// margin-bottom: rem(-20);
 }
 
 //</FORM>

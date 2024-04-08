@@ -1,7 +1,217 @@
 @@include('html/_header.htm',{
-"title":"Тайтл страницы",
+"title":"Главная",
 "modClass":""
 })
 <main class="page">
+   <div class="first-block">
+      <div class="first-block__container">
+         <div class="first-block__bg">
+            <div class="first-block__human">
+               <img src="@img/fb-human.png" alt="">
+            </div>
+
+            <div class="first-block__logo">
+               <img src="anim-logo.gif" alt="">
+            </div>
+         </div>
+         <div class="first-block__main">
+            <h1 class="first-block__title">Нанесение логотипов на одежду </h1>
+            <div class="first-block__descr">Нанесение печати на все виды текстильных изделий. Предоставим бесплатную визуализацию изделия с вашим логотипом.</div>
+            <a href="" class="first-block__link btn-green">Заказать печать</a>
+         </div>
+      </div>
+   </div>
+
+   <div class="services-block">
+      <div class="services-block__container">
+         <h2 class="services-block__title">Услуги печати</h2>
+         <div class="services-block__grid">
+            @@include('html/_card-more.htm',{
+            "src":"card-more/01.png",
+            "title":"Печать на спецодежде",
+            "text":"Печать на спецодежде позволяет добавить индивидуальности и узнаваемости вашей компании."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/02.png",
+            "title":"Печать на одежде",
+            "text":"Печать на одежде стала неотъемлемой частью современного стиля и позволяет выразить свою индивидуальность."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/03.png",
+            "title":"Печать на текстильных изделиях",
+            "text":"Печать на текстильных изделиях – это стильный и эффективный способ персонализации одежды и аксессуаров."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/04.png",
+            "title":"Печать на головных уборах",
+            "text":"Печать на головных уборах - стильный и оригинальный способ выразить свою индивидуальность."
+            })
+         </div>
+      </div>
+   </div>
+
+   <div class="about-block">
+      <div class="about-block__container">
+         <div class="about-block__main">
+            <h2 class="about-block__title">О компании</h2>
+            <div class="about-block__text">
+               <p><b>24ЛОГО</b> - команда профессионалов, обладающая богатым опытом в области дизайна и нанесения логотипов. Мы предлагаем широкий выбор услуг по персонализации одежды для различных бизнесов, мероприятий и организаций.</p>
+            </div>
+            <a href="" class="about-block__link link-more">
+               <span>Подробнее</span>
+               <svg>
+                  <use xlink:href="img/icons/icons.svg#arrow-more"></use>
+               </svg>
+            </a>
+         </div>
+         <div class="about-block__image-ibg"><img src="@img/about-block-ibg.png" alt=""></div>
+      </div>
+   </div>
+
+   <div class="mp-features">
+      <div class="mp-features__container">
+         <div class="mp-features__item">
+            <div class="mp-features__image-ibg"><img src="@img/features/01.svg" alt=""></div>
+            <div class="mp-features__text">Собственное производство</div>
+         </div>
+         <div class="mp-features__item">
+            <div class="mp-features__image-ibg"><img src="@img/features/02.svg" alt=""></div>
+            <div class="mp-features__text">Изготовление в короткие сроки</div>
+         </div>
+         <div class="mp-features__item">
+            <div class="mp-features__image-ibg"><img src="@img/features/03.svg" alt=""></div>
+            <div class="mp-features__text">Скидки постоянным клиентам</div>
+         </div>
+      </div>
+   </div>
+
+   <div class="mp-qa-block">
+      <div class="mp-qa-block__container">
+         <h2 class="mp-qa-block__title">Зачем это нужно?</h2>
+         <div class="mp-qa-block__descr">Специализированная одежда с логотипом, как способ подчеркнуть корпоративную принадлежность, является неотъемлемой частью формы сотрудников многих компаний</div>
+         <div class="mp-qa-block__main">
+            <div class="mp-qa-block__card">
+               <div class="mp-qa-block__image-ibg mp-qa-block__image-ibg_contain"><img src="@img/mp-qa/01.svg" alt=""></div>
+               <div class="mp-qa-block__card-text">Использование спецодежды с логотипом способствует формированию положительного имиджа компании в глазах клиентов и партнерова </div>
+            </div>
+            <div class="mp-qa-block__card">
+               <div class="mp-qa-block__image-ibg mp-qa-block__image-ibg_contain"><img src="@img/mp-qa/02.svg" alt=""></div>
+               <div class="mp-qa-block__card-text">Повышение узнаваемости бренда и создание единой стилистики внутри компании</div>
+            </div>
+            <div class="mp-qa-block__card">
+               <div class="mp-qa-block__image-ibg mp-qa-block__image-ibg_contain"><img src="@img/mp-qa/03.svg" alt=""></div>
+               <div class="mp-qa-block__card-text">Наличие логотипа на спецодежде позволяет легко отличать сотрудников от посторонних лиц и повышает уровень безопасности на производстве</div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="services-block services-block_grey">
+      <div class="services-block__container">
+         <h2 class="services-block__title">Способы нанесения</h2>
+         <div class="services-block__grid">
+            @@include('html/_card-more.htm',{
+            "src":"card-more/05.png",
+            "title":"DTF-печать",
+            "text":"Данная форма нанесения логотипа является самой популярной у наших клиентов при небольших заказах. Для нанесения используется технология термопереносом как одноцветных, так и многоцветных изображений. Преимуществом является также высокая скорость изготовления логотипа."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/06.png",
+            "title":"Термоплёнка",
+            "text":"Данная форма нанесения логотипа является самой популярной у наших клиентов при небольших заказах. Для нанесения используется технология термопереносом как одноцветных, так и многоцветных изображений. Преимуществом является также высокая скорость изготовления логотипа."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/07.png",
+            "title":"Вышивка",
+            "text":"Данная форма нанесения логотипа является самой популярной у наших клиентов при небольших заказах. Для нанесения используется технология термопереносом как одноцветных, так и многоцветных изображений. Преимуществом является также высокая скорость изготовления логотипа."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/08.png",
+            "title":"Шелкография",
+            "text":"При необходимости нанести логотип на большую партию рабочей одежды, мыпредлагаем данную форму нанесения логотипа. Важным преимуществом стоит отметить, что такой логотип долгие годы сохраняет свой первоначальный вид, не подвергается истиранию и выцветанию."
+            })
+         </div>
+      </div>
+   </div>
+
+   <div class="work-stages">
+      <div class="work-stages__container">
+         <h2 class="work-stages__title">Этапы работы</h2>
+         <div class="work-stages__grid">
+            <div class="work-stages__item">
+               <div class="work-stages__image-ibg"><img src="@img/mp-qa/01.svg" alt=""></div>
+               <div class="work-stages__item-text">Проверка изображения или подготовка нового</div>
+            </div>
+            <div class="work-stages__item">
+               <div class="work-stages__image-ibg"><img src="@img/mp-qa/02.svg" alt=""></div>
+               <div class="work-stages__item-text">Согласование заказа и сроков</div>
+            </div>
+            <div class="work-stages__item">
+               <div class="work-stages__image-ibg"><img src="@img/mp-qa/03.svg" alt=""></div>
+               <div class="work-stages__item-text">Внесение предоплаты заказчиком</div>
+            </div>
+            <div class="work-stages__item">
+               <div class="work-stages__image-ibg"><img src="@img/mp-qa/04.svg" alt=""></div>
+               <div class="work-stages__item-text">Печать изображения</div>
+            </div>
+            <div class="work-stages__item">
+               <div class="work-stages__image-ibg"><img src="@img/mp-qa/05.svg" alt=""></div>
+               <div class="work-stages__item-text">Отгрузка заказа </div>
+            </div>
+            <div class="work-stages__item">
+               <div class="work-stages__image-ibg"><img src="@img/mp-qa/06.svg" alt=""></div>
+               <div class="work-stages__item-text">Внесение постоплаты</div>
+            </div>
+            <div class="work-stages__item">
+               <div class="work-stages__image-ibg"><img src="@img/mp-qa/07.svg" alt=""></div>
+               <div class="work-stages__item-text">Упаковка заказа </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="page-form">
+      <div class="page-form__container">
+         <div class="page-form__main">
+            <h2 class="page-form__title">Оставить заявку</h2>
+            <div class="page-form__text">Оставьте контакт и расскажите, что необходимо и мы свяжемся с Вами в ближайшее время</div>
+            <form action="" class="page-form__form" data-parsley-validate data-parsley-trigger="change">
+               <div class="form__line">
+                  <label for="" class="form__label">Ваше имя*</label>
+                  <input required id="" type="text" name="" class="form__input">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">Телефон*</label>
+                  <input required id="" type="tel" name="" class="form__input js_phone">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">Опишите задачу</label>
+                  <textarea id="" autocomplete="off" name="" class="form__input"></textarea>
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__check">
+                  <label class="checkbox">
+                     <input required class="checkbox__input" type="checkbox" value="1" name="consent" checked>
+                     <span class="checkbox__chunk"></span>
+                     <span class="checkbox__text">Я даю свое <a href="">согласие на обработку персональных данных</a></span>
+                  </label>
+               </div>
+               <button type="submit" class="form__button btn-green">Заказать печать</button>
+            </form>
+         </div>
+         <div class="page-form__image-ibg">
+            <img src="@img/page-form-bg.png" alt="">
+            <img src="@img/page-form-fig.svg" alt="" class="page-form__fig-img">
+         </div>
+      </div>
+   </div>
 </main>
 @@include('html/_footer.htm',{})

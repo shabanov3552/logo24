@@ -1,5 +1,121 @@
 //====================================================================================================
 
+.footer {
+   background: var(--seryy-temnyy);
+   padding: rem(60) 0;
+
+   @media (max-width:$xl) {
+      padding-bottom: rem(40);
+   }
+
+   // .footer__container
+
+   &__container {}
+
+   // .footer__top
+
+   &__top {
+      margin-bottom: rem(80);
+      display: flex;
+      gap: 120px;
+      justify-content: space-between;
+
+      @media (max-width:$xl) {
+         display: grid;
+         grid-template-columns: 1fr 214px;
+      }
+
+      @media (max-width:$md) {
+         display: flex;
+         flex-direction: column-reverse;
+         gap: 60px;
+      }
+   }
+
+   // .footer__menu
+
+   &__menu {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 25px;
+      max-width: 850px;
+
+      @media (max-width:$md) {
+         display: flex;
+         flex-direction: column;
+         align-content: normal;
+         align-items: center;
+      }
+   }
+
+   // .footer__link
+
+   &__link {
+      font-weight: 500;
+      font-size: 16px;
+   }
+
+   // .footer__contacts
+
+   &__contacts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 40px;
+      justify-items: end;
+      max-width: 425px;
+      flex: 0 0 425px;
+
+      @media (max-width:$xl) {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+      }
+
+      @media (max-width:$md) {
+         flex: 1 1 auto;
+         max-width: 100%;
+         align-items: center;
+         max-width: 274px;
+         margin: 0 auto;
+      }
+
+   }
+
+   // .footer__contact-item
+
+   &__contact-item {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 10px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+
+      img {
+         max-width: 100%;
+      }
+
+      &:not(:last-child) {
+         justify-self: start;
+      }
+
+      &:last-child {
+         width: 214px;
+         grid-column: 2/3;
+         grid-row: 1/3;
+
+         @media (max-width:$md) {
+            width: auto;
+         }
+      }
+   }
+
+   // .footer__bottom
+
+   &__bottom {}
+}
+
 //====================================================================================================
 .copyright {
 
@@ -11,22 +127,24 @@
 
    &__body {
       display: grid;
-      grid-template-columns: repeat(2, auto) 1fr auto;
-      column-gap: 50px;
+      grid-template-columns: repeat(4, auto);
+      column-gap: 85px;
       row-gap: 8px;
-      justify-items: start;
+      justify-content: space-between;
+      align-items: center;
 
-      @media (max-width:$xl) and (min-width:$lg) {
-         grid-template-columns: auto 1fr auto;
+      @media (max-width:em(999.98)) {
+         gap: 20px 40px;
       }
 
       @media (max-width:$lg) {
-         grid-template-columns: repeat(2, 1fr);
-         justify-items: center;
+         grid-template-columns: repeat(2, auto);
       }
 
       @media (max-width:$md) {
-         grid-template-columns: 1fr;
+         justify-content: center;
+         text-align: center;
+         gap: 15px;
       }
    }
 
@@ -36,30 +154,39 @@
       font-size: 14px;
       line-height: 22px;
 
-      @media (min-width:$lg) {}
+      &:first-child {
+         font-family: var(--third-family);
 
-      @media (max-width:$xl) and (min-width:$lg) {
-
-         &:nth-child(3) {
+         @media (max-width:$lg) {
             grid-row: 2/3;
-            grid-column: 2/3;
+         }
+
+         @media (max-width:$md) {
+            grid-row: 3/4;
          }
       }
 
-      @media (max-width:$lg) {
-         text-align: center;
+      &:nth-child(2),
+      &:nth-child(3) {
+         @media (max-width:$md) {
+            grid-column: 1/3;
+            grid-row: 1/2;
+         }
+      }
+
+      &:nth-child(3) {
+         @media (max-width:$md) {
+            grid-row: 2/3;
+            margin-bottom: rem(45);
+         }
       }
 
       &:last-child {
          display: flex;
          align-items: center;
          gap: 7px;
-         color: #757575;
 
-         @media (max-width:$xl) and (min-width:$lg) {
-            grid-row: 2/3;
-            grid-column: 3/4;
-         }
+         @media (max-width:$md) {}
       }
    }
 
@@ -68,5 +195,9 @@
    &__svg {
       width: 75px;
       height: 13px;
+
+      use {
+         fill: #B7DFFF;
+      }
    }
 }
