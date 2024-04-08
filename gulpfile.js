@@ -23,26 +23,25 @@ import { html } from "./config/gulp-tasks/html.js";
 import { css } from "./config/gulp-tasks/css.js";
 import { js } from "./config/gulp-tasks/js.js";
 import { jsDev } from "./config/gulp-tasks/js-dev.js";
-import { images } from "./config/gulp-tasks/images.js";
+import { WebP, imagesOptimize, copySvg } from "./config/gulp-tasks/images.js";
 import { ftp } from "./config/gulp-tasks/ftp.js";
 import { zip } from "./config/gulp-tasks/zip.js";
 import { sprite } from "./config/gulp-tasks/sprite.js";
 import { gitignore } from "./config/gulp-tasks/gitignore.js";
-import { otfToTtf, ttfToWoff, fonstStyle } from "./config/gulp-tasks/fonts.js";
+import { otfToTtf, ttfToWoff2, woff2Copy, fontsStyle } from "./config/gulp-tasks/fonts.js";
 
 // Последовательная обработака шрифтов
-const fonts = gulp.series(reset, otfToTtf, ttfToWoff, fonstStyle);
+const fonts = gulp.series(reset, otfToTtf, ttfToWoff2, woff2Copy, fontsStyle);
 // Основные задачи будем выполнять параллельно после обработки шрифтов
-const devTasks = gulp.parallel(fonts, gitignore);
+const devTasks = gulp.series(fonts, gitignore);
 // Основные задачи будем выполнять параллельно после обработки шрифтов
-const buildTasks = gulp.series(fonts, jsDev, js, gulp.parallel(html, css, images, gitignore));
+const buildTasks = gulp.series(fonts, jsDev, js, gulp.parallel(html, css, gulp.parallel(WebP, imagesOptimize, copySvg), gitignore));
 
 // Экспорт задач
 export { html }
 export { css }
 export { js }
 export { jsDev }
-export { images }
 export { fonts }
 export { sprite }
 export { ftp }
