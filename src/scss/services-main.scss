@@ -1,0 +1,240 @@
+.services {
+   padding-top: rem(60);
+   padding-bottom: rem(100);
+
+   @media (max-width:$md) {
+      padding-top: rem(40);
+      padding-bottom: rem(60);
+   }
+
+   // .services__container
+
+   &__container {}
+
+   // .services__title
+
+   &__title {
+      margin-bottom: rem(80);
+
+      @media (max-width:$md) {
+         margin-bottom: rem(40);
+      }
+   }
+
+   // .services__main
+
+   &__main {
+      max-width: 1538px;
+   }
+
+   // .services__item
+
+   &__item {
+      background: var(--seryy-temnyy);
+      padding: rem(60) rem(40);
+      border-radius: 20px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 45px;
+      position: relative;
+      grid-template-rows: auto 1fr;
+
+      @media (max-width:$lg) {
+         grid-template-columns: 1fr;
+      }
+
+      @media (max-width:$md) {
+         padding: rem(40) rem(20);
+         gap: 20px;
+      }
+
+      &:hover {
+         .services__item-title {
+            color: var(--zelenyy);
+         }
+      }
+
+      &:not(:last-child) {
+         margin-bottom: rem(40);
+      }
+   }
+
+   // .services__item-link
+
+   &__item-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+   }
+
+   // .services__image-ibg
+
+   &__image-ibg {
+      width: 527px;
+      height: 527px;
+      grid-row: 1/3;
+
+      @media (max-width:$xxl) {
+         grid-row: 1/2;
+         width: 378px;
+         height: 378px;
+      }
+
+      @media (max-width:$xl) {
+         width: 280px;
+         height: 280px;
+      }
+
+      @media (max-width:$lg) {
+         grid-row: auto;
+      }
+
+      @media (max-width:$md) {
+         width: 100%;
+         max-width: 295px;
+         height: 295px;
+      }
+   }
+
+   // .services__item-content
+
+   &__item-content {}
+
+   // .services__item-title
+
+   &__item-title {
+      font-family: var(--second-family);
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 95%;
+      margin-bottom: rem(40);
+      @include adaptiveValue("font-size", 60, 28, 3, 1000, 375);
+
+      @media (max-width:$md) {
+         margin-bottom: rem(20);
+      }
+   }
+
+   // .services__item-descr
+
+   &__item-descr {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 120%;
+      @include adaptiveValue("font-size", 24, 16, 3, 1000, 375);
+   }
+
+   // .services__links
+
+   &__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px 60px;
+      position: relative;
+      z-index: 2;
+      align-self: start;
+
+      @media (max-width:$xxl) {
+         grid-column: 1/3;
+      }
+
+      @media (max-width:$lg) {
+         grid-column: auto;
+      }
+
+      @media (max-width:$md) {
+         gap: 20px;
+      }
+   }
+
+   // .services__link
+
+   &__link {
+      @media (max-width:$lg) {
+         grid-column: auto;
+         font-size: 16px;
+      }
+
+      &:hover {
+         color: var(--zelenyy);
+         transform: scale(1);
+
+         svg use {
+            stroke: var(--zelenyy);
+         }
+      }
+   }
+}
+
+.services-detail-fb {
+   background: var(--seryy-svetlyy) url('@img/services-detail-fb-bg.png') right no-repeat;
+
+   // .services-detail-fb__container
+
+   &__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .breadcrumbs {
+         padding-top: rem(60);
+      }
+   }
+
+   // .services-detail-fb__main
+
+   &__main {
+      padding-bottom: rem(150);
+   }
+
+   // .services-detail-fb__title
+
+   &__title {
+      margin-bottom: rem(40);
+   }
+
+   // .services-detail-fb__descr
+
+   &__descr {
+      font-weight: 500;
+      font-size: 24px;
+      margin-bottom: rem(60);
+      line-height: 120%;
+   }
+
+   // .services-detail-fb__btn
+
+   &__btn {
+      width: 373px;
+   }
+
+   // .services-detail-fb__bottom-text
+
+   &__bottom-text {
+      font-weight: 500;
+      font-size: 16px;
+      margin-top: rem(60);
+   }
+
+   // .services-detail-fb__image-ibg
+
+   &__image-ibg {
+      grid-row: 1/3;
+      grid-column: 2/3;
+
+      img {
+         max-width: 100%;
+         width: auto;
+         height: auto;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+      }
+
+      // .services-detail-fb__image-ibg_contain
+
+      &_contain {}
+   }
+}

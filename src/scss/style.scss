@@ -100,6 +100,10 @@ body {
 	flex-direction: column;
 	overflow: hidden;
 
+	&.seryy-svetlyy {
+		background: var(--seryy-svetlyy);
+	}
+
 	@supports (overflow: clip) {
 		overflow: clip;
 	}
@@ -203,3 +207,4 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home";
+@import "services-main";

@@ -1,8 +1,9 @@
 .breadcrumbs {
 	position: relative;
 	z-index: 1;
-	margin-bottom: rem(18);
+	margin-bottom: rem(40);
 	display: flex;
+	color: #fff;
 
 	.page-contacts.page-left-margin & {
 		padding-left: rem(0);
@@ -65,7 +66,7 @@
 	// .breadcrumbs__li
 
 	&__li {
-		margin: rem(0) rem(15) rem(5) rem(0);
+		margin: rem(0) rem(15) rem(0) rem(0);
 		display: flex;
 		align-items: center;
 		white-space: nowrap;
@@ -84,8 +85,9 @@
 	// .breadcrumbs__link
 
 	&__link {
-		color: #000;
-		font-size: 14px;
+		color: #fff;
+		font-weight: 500;
+		font-size: 16px;
 		line-height: 22px;
 		white-space: nowrap;
 
@@ -110,8 +112,9 @@
 	// .breadcrumbs__item
 
 	&__item {
-		color: #000;
-		font-size: 14px;
+		color: #fff;
+		font-weight: 500;
+		font-size: 16px;
 		line-height: 22px;
 		white-space: nowrap;
 

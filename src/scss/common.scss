@@ -519,3 +519,12 @@
 
    &__fig-img {}
 }
+
+.page-title {
+   font-family: var(--second-family);
+   font-weight: 700;
+   font-size: 68px;
+   line-height: 95%;
+   color: #fff;
+   @include adaptiveValue("font-size", 68, 48, 3, 1000, 767);
+}
