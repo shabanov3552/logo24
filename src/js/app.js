@@ -47,7 +47,7 @@ flsFunctions.menuInit();
 Документация: https://template.fls.guru/template-docs/modul-spojlery.html
 Сниппет (HTML): spollers
 */
-// flsFunctions.spollers();
+flsFunctions.spollers();
 
 /*
 Модуль работы с табами
@@ -61,7 +61,7 @@ flsFunctions.menuInit();
 Документация: https://template.fls.guru/template-docs/modul-pokazat-eshhjo.html
 Сниппет (HTML): showmore
 */
-// flsFunctions.showMore();
+flsFunctions.showMore();
 
 /*
 Модуль "Эффект волн"
@@ -156,7 +156,7 @@ import "./files/forms/inputmask.js";
 Документация плагина: https://swiperjs.com/
 Сниппет(HTML): swiper
 */
-//import "./files/sliders.js";
+import "./files/sliders.js";
 
 // ========================================================================================================================================================================================================================================================
 // Модули работы с прокруткой страницы ========================================================================================================================================================================================================================================================

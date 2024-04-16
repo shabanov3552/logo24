@@ -1,14 +1,28 @@
-[data-showmore] {
-}
-[data-showmore-content] {
-}
+[data-showmore] {}
+
+[data-showmore-content] {}
+
 [data-showmore-button] {
+	text-decoration: underline;
+	font-weight: 700;
+	font-size: 24px;
+
+	&:hover {
+		color: #7c0;
+	}
+
+	&:active {
+		color: #63b800;
+	}
+
 	span {
 		&:last-child {
 			display: none;
 		}
+
 		._showmore-active & {
 			display: none;
+
 			&:last-child {
 				display: block;
 			}

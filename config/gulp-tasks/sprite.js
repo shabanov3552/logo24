@@ -42,21 +42,8 @@ export const sprite = () => {
 		}))
 		.pipe(cheerio({
 			run: function ($) {
-				// Для атрибута fill
-				$('[fill]').each(function () {
-					const fillValue = $(this).attr('fill');
-					if (fillValue && fillValue !== "none") {
-						$(this).attr('fill', 'currentColor');
-					}
-				});
-
-				// Для атрибута stroke
-				$('[stroke]').each(function () {
-					const strokeValue = $(this).attr('stroke');
-					if (strokeValue && strokeValue !== "none") {
-						$(this).attr('stroke', 'currentColor');
-					}
-				});
+				$('[fill]').removeAttr('fill');
+				$('[stroke]').removeAttr('stroke');
 				$('[style]').removeAttr('style');
 			},
 			parserOptions: { xmlMode: true }

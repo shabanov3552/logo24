@@ -1,5 +1,5 @@
 @@include('html/_header.htm',{
-"title":"Услуги",
+"title":"Услуги 2 уровень",
 "modClass":""
 })
 <main class="page">
@@ -12,57 +12,216 @@
             <div class="services-detail-fb__descr">
                <p>Печать логотипов на одежде является отличным способом продвижения бренда и создания узнаваемого стиля. Это позволяет компаниям выделиться на рынке и привлечь больше внимания потенциальных клиентов. Независимо от выбранного способа печати, результат всегда высокого качества и долговечен.</p>
             </div>
-            <a href="" class="services-detail-fb__btn btn-green">Заказать печать</a>
+            <a href="" class="services-detail-fb__btn btn-green" data-popup="#application">Заказать печать</a>
          </div>
          <div class="services-detail-fb__image-ibg services-detail-fb__image-ibg_contain"><img src="@img/services-detail-fb-01.png" alt=""></div>
 
       </div>
    </div>
-   <div class="services-detail-fb">
-      <div class="services-detail-fb__container">
-         @@include('html/_breadcrumbs.htm',{})
 
-         <div class="services-detail-fb__main">
-            <h1 class="services-detail-fb__title page-title">Печать на футболках</h1>
-            <div class="services-detail-fb__descr">
-               <p>Вы когда-нибудь задумывались, что ваша одежда может быть исключительной, как будто художник разместил свое полотно прямо на вас? Сегодня, благодаря печати на футболках, это больше не фантастика, а реальность, доступная каждому.</p>
-            </div>
-            <a href="" class="services-detail-fb__btn btn-green">Заказать печать</a>
+   <div class="printing-services">
+      <div class="printing-services__container">
+         <h2 class="printing-services__title">Услуги нанесения</h2>
+         <div class="printing-services__grid">
+            @@include('html/_card-more.htm',{
+            "src":"card-more/09.png",
+            "title":"Печать на футболках",
+            "text":"Заказать печать логотипа на футболках и создать уникальный стиль своей команды"
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/10.png",
+            "title":"Печать на рубашках поло",
+            "text":"Печать на рубашке поло добавляет стиль и индивидуальность вашему образу. "
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/11.png",
+            "title":"Печать на ветровках",
+            "text":"Печать на ветровке добавит индивидуальности и стиля вашему образу, выделит вас среди остальных."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/12.png",
+            "title":"Печать на спортивной одежде",
+            "text":"Печать на спортивной одежде - стильное и эффективное средство выражения своей индивидуальности и командного духа."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/13.png",
+            "title":"Печать на толстовках",
+            "text":"Печать на толстовке - стильный и эффектный способ выделиться из толпы и подчеркнуть свою индивидуальность."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/14.png",
+            "title":"Печать на свитшотах",
+            "text":"Заказать печать логотипа на свитшотах, сделайте из обычного свитшота фирменный бренд."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/15.png",
+            "title":"Печать на куртках",
+            "text":"Заказать печать на куртке. Куртка с логотипом, станет отличным стильным элементом вашего гардероба."
+            })
          </div>
-         <div class="services-detail-fb__image-ibg services-detail-fb__image-ibg_contain"><img src="@img/services-detail-fb-02.png" alt=""></div>
-
       </div>
    </div>
-   <div class="services-detail-fb">
-      <div class="services-detail-fb__container">
-         @@include('html/_breadcrumbs.htm',{})
 
-         <div class="services-detail-fb__main">
-            <h1 class="services-detail-fb__title page-title">Подготовка макетов</h1>
-            <div class="services-detail-fb__descr">
-               <p>Цветокоррекция изображения – это процесс изменения цветового баланса и насыщенности, чтобы достичь идеального зрительного эффекта. С помощью цветокоррекции можно преобразовать скучные или неправильно отображающиеся цвета в яркие, реалистичные и привлекательные.</p>
+   <div class="mp-features">
+      <div class="mp-features__container">
+         <div class="mp-features__item">
+            <div class="mp-features__image-ibg"><img src="@img/features/04.svg" alt=""></div>
+            <div class="mp-features__content">
+               <div class="mp-features__top-text">Минимальный тираж</div>
+               <div class="mp-features__text">10 шт</div>
             </div>
-            <a href="" class="services-detail-fb__btn btn-green">Оставить заявку</a>
-            <div class="services-detail-fb__bottom-text">*
-               Стоимость в рублях за 1 изображение на тираж</div>
          </div>
-         <div class="services-detail-fb__image-ibg services-detail-fb__image-ibg_contain"><img src="@img/services-detail-fb-03.png" alt=""></div>
-
+         <div class="mp-features__item">
+            <div class="mp-features__image-ibg"><img src="@img/features/05.svg" alt=""></div>
+            <div class="mp-features__content">
+               <div class="mp-features__top-text">Минимальный срок изготовления</div>
+               <div class="mp-features__text">1 день</div>
+            </div>
+         </div>
+         <div class="mp-features__item">
+            <div class="mp-features__image-ibg"><img src="@img/features/06.svg" alt=""></div>
+            <div class="mp-features__content">
+               <div class="mp-features__top-text">Скидка на заказ <br> от 1000 шт</div>
+               <div class="mp-features__text">10%</div>
+            </div>
+         </div>
       </div>
    </div>
-   <div class="services-detail-fb">
-      <div class="services-detail-fb__container">
-         @@include('html/_breadcrumbs.htm',{})
 
-         <div class="services-detail-fb__main">
-            <h1 class="services-detail-fb__title page-title">DTF-печать</h1>
-            <div class="services-detail-fb__descr">
-               <p>В современном мире печати постоянно возникают новые технологии, которые обещают улучшить качество и эффективность процессов. Одной из таких передовых технологий является DTF (Direct to Film). Этот метод печати становится все более популярным среди малого и среднего бизнеса благодаря его гибкости и простоте применения.</p>
+   <div class="work-examples">
+      <div class="work-examples__container">
+         <h2 class="work-examples__title">Примеры выполненных работ по нанесению на одежде</h2>
+         <div class="work-examples__slider swiper">
+            <div class="work-examples__nav">
+               <button type="button" class="swiper-button-prev">
+                  <svg>
+                     <use xlink:href="img/icons/icons.svg#arrow-slider-left"></use>
+                  </svg>
+               </button>
+               <button type="button" class="swiper-button-next">
+                  <svg>
+                     <use xlink:href="img/icons/icons.svg#arrow-slider-right"></use>
+                  </svg>
+               </button>
             </div>
-            <a href="" class="services-detail-fb__btn btn-green">Заказать печать</a>
+            <div class="work-examples__wrapper swiper-wrapper">
+               <div class="work-examples__slide swiper-slide">
+                  <a href="" class="work-examples__image-ibg"><img src="@img/work-examples/01.png" alt=""></a>
+               </div>
+               <div class="work-examples__slide swiper-slide">
+                  <a href="" class="work-examples__image-ibg"><img src="@img/work-examples/02.png" alt=""></a>
+               </div>
+               <div class="work-examples__slide swiper-slide">
+                  <a href="" class="work-examples__image-ibg"><img src="@img/work-examples/03.png" alt=""></a>
+               </div>
+               <div class="work-examples__slide swiper-slide">
+                  <a href="" class="work-examples__image-ibg"><img src="@img/work-examples/04.png" alt=""></a>
+               </div>
+               <div class="work-examples__slide swiper-slide">
+                  <a href="" class="work-examples__image-ibg"><img src="@img/work-examples/02.png" alt=""></a>
+               </div>
+            </div>
          </div>
-         <div class="services-detail-fb__image-ibg services-detail-fb__image-ibg_contain"><img src="@img/services-detail-fb-04.png" alt=""></div>
+      </div>
+   </div>
 
+   <div class="services-block services-block_grey">
+      <div class="services-block__container">
+         <h2 class="services-block__title">Способы нанесения</h2>
+         <div class="services-block__grid">
+            @@include('html/_card-more.htm',{
+            "src":"card-more/05.png",
+            "title":"DTF-печать",
+            "text":"Данная форма нанесения логотипа является самой популярной у наших клиентов при небольших заказах. Для нанесения используется технология термопереносом как одноцветных, так и многоцветных изображений. Преимуществом является также высокая скорость изготовления логотипа."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/06.png",
+            "title":"Термоплёнка",
+            "text":"Данная форма нанесения логотипа является самой популярной у наших клиентов при небольших заказах. Для нанесения используется технология термопереносом как одноцветных, так и многоцветных изображений. Преимуществом является также высокая скорость изготовления логотипа."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/07.png",
+            "title":"Вышивка",
+            "text":"Данная форма нанесения логотипа является самой популярной у наших клиентов при небольших заказах. Для нанесения используется технология термопереносом как одноцветных, так и многоцветных изображений. Преимуществом является также высокая скорость изготовления логотипа."
+            })
+            @@include('html/_card-more.htm',{
+            "src":"card-more/08.png",
+            "title":"Шелкография",
+            "text":"При необходимости нанести логотип на большую партию рабочей одежды, мыпредлагаем данную форму нанесения логотипа. Важным преимуществом стоит отметить, что такой логотип долгие годы сохраняет свой первоначальный вид, не подвергается истиранию и выцветанию."
+            })
+         </div>
+      </div>
+   </div>
+
+   <div class="page-form">
+      <div class="page-form__container">
+         <div class="page-form__main">
+            <h2 class="page-form__title">Оставить заявку</h2>
+            <div class="page-form__text">Оставьте контакт и расскажите, что необходимо и мы свяжемся с Вами в ближайшее время</div>
+            <form action="" class="page-form__form" data-parsley-validate data-parsley-trigger="change">
+               <div class="form__line">
+                  <label for="" class="form__label">Ваше имя*</label>
+                  <input required id="" type="text" name="" class="form__input">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">Телефон*</label>
+                  <input required id="" type="tel" name="" class="form__input js_phone">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">Опишите задачу</label>
+                  <textarea id="" autocomplete="off" name="" class="form__input"></textarea>
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__check">
+                  <label class="checkbox">
+                     <input required class="checkbox__input" type="checkbox" value="1" name="consent" checked>
+                     <span class="checkbox__chunk"></span>
+                     <span class="checkbox__text">Я даю свое <a href="">согласие на обработку персональных данных</a></span>
+                  </label>
+               </div>
+               <button type="submit" class="form__button btn-green">Заказать печать</button>
+            </form>
+         </div>
+         <div class="page-form__image-ibg">
+            <img src="@img/page-form-bg.png" alt="">
+            <img src="@img/page-form-fig.svg" alt="" class="page-form__fig-img">
+         </div>
+      </div>
+   </div>
+
+   <div class="faq-block">
+      <div class="faq-block__container">
+         <h2 class="faq-block__title">FAQ</h2>
+         <div data-spollers class="faq-block__spollers spollers">
+            <div class="spollers__item">
+               <button type="button" data-spoller class="spollers__title">Какая технология печати лучше всего подходит для малых тиражей?</button>
+               <div class="spollers__body">Стоимостьпечати зависит от сложности дизайна, выбранной технологии и качества самойфутболки. Цены варьируются от очень доступных до довольно высоких заэксклюзивные заказы.</div>
+            </div>
+            <div class="spollers__item">
+               <button type="button" data-spoller class="spollers__title">Сколько стоит распечатать одну вещь?</button>
+               <div class="spollers__body">Стоимостьпечати зависит от сложности дизайна, выбранной технологии и качества самойфутболки. Цены варьируются от очень доступных до довольно высоких заэксклюзивные заказы.</div>
+            </div>
+            <div class="spollers__item">
+               <button type="button" data-spoller class="spollers__title">Можно ли стирать вещи с печатью в машинке?</button>
+               <div class="spollers__body">Стоимостьпечати зависит от сложности дизайна, выбранной технологии и качества самойфутболки. Цены варьируются от очень доступных до довольно высоких заэксклюзивные заказы.</div>
+            </div>
+            <div class="spollers__item">
+               <button type="button" data-spoller class="spollers__title">Долго ли держится печать на одежде?</button>
+               <div class="spollers__body">Стоимостьпечати зависит от сложности дизайна, выбранной технологии и качества самойфутболки. Цены варьируются от очень доступных до довольно высоких заэксклюзивные заказы.</div>
+            </div>
+            <div class="spollers__item">
+               <button type="button" data-spoller class="spollers__title">Можно ли заказать печать на одежде со своим дизайном онлайн?</button>
+               <div class="spollers__body">Стоимостьпечати зависит от сложности дизайна, выбранной технологии и качества самойфутболки. Цены варьируются от очень доступных до довольно высоких заэксклюзивные заказы.</div>
+            </div>
+         </div>
       </div>
    </div>
 </main>

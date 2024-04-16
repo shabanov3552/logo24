@@ -44,3 +44,50 @@
 .swiper-button-lock {
 	display: none !important;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+	width: 70px;
+	height: 70px;
+	background: var(--seryy-temnyy);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media (max-width:767.98px) {
+		width: 34px;
+		height: 34px;
+	}
+
+	svg {
+		width: 27px;
+		height: 27px;
+
+		@media (max-width:767.98px) {
+			width: 16px;
+			height: 16px;
+		}
+
+		fill: none;
+
+		use {
+			stroke: #fff;
+		}
+	}
+
+	&:hover {
+		background: var(--zelenyy);
+
+		svg {
+			use {
+				stroke: var(--seryy-temnyy);
+			}
+		}
+	}
+
+}
+
+.swiper-button-prev {}
+
+.swiper-button-prev {}

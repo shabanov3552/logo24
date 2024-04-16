@@ -28,9 +28,86 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.work-examples__slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.swiper', { // Указываем скласс нужного слайдера
+		new Swiper('.work-examples__slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 4,
+			spaceBetween: 20,
+			speed: 300,
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.work-examples__nav .swiper-button-prev',
+				nextEl: '.work-examples__nav .swiper-button-next',
+			},
+			// Брейкпоинты
+
+			breakpoints: {
+				320: {
+					slidesPerView: 1.3,
+					spaceBetween: 10,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1399.98: {
+					slidesPerView: 4,
+					spaceBetween: 20,
+				},
+			},
+			// autoHeight: true,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+			/*
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагинация
+			/*
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			*/
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+
+
+			// События
+			// on: {
+
+			// }
+		});
+	}
+	if (document.querySelector('.swi')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.swi', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation],
