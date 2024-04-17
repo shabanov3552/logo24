@@ -429,6 +429,10 @@
    padding: rem(100) 0;
    background: url('@img/services-detail-main-bg.svg') -236px 120px no-repeat;
 
+   .price-page & {
+      background: #fff url('@img/services-detail-main-bg.svg') -236px 120px no-repeat;
+   }
+
    @media (max-width:$lg) {
       padding: rem(60) 0;
    }
@@ -457,6 +461,10 @@
       &:nth-child(odd) {
          background: var(--seryy-svetlyy);
          color: #fff;
+
+         .price-page & {
+            background: var(--seryy-temnyy);
+         }
       }
    }
 

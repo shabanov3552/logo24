@@ -13,15 +13,15 @@ if (document.querySelector('#map')) {
 
 		function init() {
 			var myMap = new ymaps.Map("map", {
-				center: [56.066525, 92.961439],
-				zoom: 16,
+				center: [56.06431302077033, 92.98107201553687],
+				zoom: 17,
 				controls: ['zoomControl'],
 			});
-			let addresFirst = new ymaps.Placemark([56.066525, 92.961439], {}, {
+			let addresFirst = new ymaps.Placemark([56.06431302077033, 92.98107201553687], {}, {
 				iconLayout: 'default#imageWithContent',
 				iconImageHref: '@img/icons/map-marker.svg',
-				iconImageSize: [92, 57],
-				iconImageOffset: [-30, -60],
+				iconImageSize: [68, 82],
+				iconImageOffset: [-30, -80],
 				iconContentOffset: [0, 0],
 			});
 			myMap.geoObjects.add(addresFirst);

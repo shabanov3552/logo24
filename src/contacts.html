@@ -1,0 +1,81 @@
+@@include('html/_header.htm',{
+"title":"Контакты",
+"modClass":"seryy-svetlyy"
+})
+<main class="page">
+   <div class="contacts">
+      <div class="contacts__container">
+         @@include('html/_breadcrumbs.htm',{})
+         <div class="contacts__grid">
+            <div class="contacts__main">
+               <h1 class="contacts__title page-title">Контакты</h1>
+               <div class="contacts__links">
+                  <a href="tel:+79332008077" class="contacts__link">
+                     <img src="@img/icons/contact-phone.svg" alt="">
+                     <span>+7 933 200 80 77</span>
+                  </a>
+                  <a href="mailto:ilkinao@24-spec.ru" class="contacts__link">
+                     <img src="@img/icons/contact-mail.svg" alt="">
+                     <span>ilkinao@24-spec.ru</span>
+                  </a>
+                  <div class="contacts__link">
+                     <img src="@img/icons/contact-map-pin.svg" alt="">
+                     <span>660055, Россия, Красноярский край, г. Красноярск, ул. Джамбульская, д.16, стр. 2, оф.3-50, этаж 3</span>
+                  </div>
+               </div>
+            </div>
+            <div class="contacts__map">
+               <div id="map"></div>
+               <script>
+                  @@include('js/files/map.js', {})
+               </script>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="page-form page-form_dark">
+      <div class="page-form__container">
+         <div class="page-form__main">
+            <h2 class="page-form__title">Оставить заявку</h2>
+            <div class="page-form__text">Оставьте контакт и расскажите, что необходимо и мы свяжемся с Вами в ближайшее время</div>
+            <form action="" class="page-form__form" data-parsley-validate data-parsley-trigger="change">
+               <div class="form__line">
+                  <label for="" class="form__label">Ваше имя*</label>
+                  <input required id="" type="text" name="" class="form__input">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">Телефон*</label>
+                  <input required id="" type="tel" name="" class="form__input js_phone">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">Ваше сообщение</label>
+                  <textarea id="" autocomplete="off" name="" class="form__input"></textarea>
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__check">
+                  <label class="checkbox">
+                     <input required class="checkbox__input" type="checkbox" value="1" name="consent" checked>
+                     <span class="checkbox__chunk"></span>
+                     <span class="checkbox__text">Я даю свое <a href="">согласие на обработку персональных данных</a></span>
+                  </label>
+               </div>
+               <button type="submit" class="form__button btn-green">Заказать печать</button>
+            </form>
+         </div>
+         <div class="page-form__image-ibg">
+            <img src="@img/page-form-bg.png" alt="">
+            <img src="@img/page-form-fig.svg" alt="" class="page-form__fig-img">
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

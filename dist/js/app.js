@@ -3670,8 +3670,8 @@
                     closeEsc: true,
                     bodyLock: true,
                     hashSettings: {
-                        location: true,
-                        goHash: true
+                        location: false,
+                        goHash: false
                     },
                     on: {
                         beforeOpen: function() {},
@@ -7543,6 +7543,36 @@
                 navigation: {
                     prevEl: ".work-examples__nav .swiper-button-prev",
                     nextEl: ".work-examples__nav .swiper-button-next"
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.3,
+                        spaceBetween: 10
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    1399.98: {
+                        slidesPerView: 4,
+                        spaceBetween: 20
+                    }
+                }
+            });
+            if (document.querySelector(".blog-feed__slider")) new swiper_core_Swiper(".blog-feed__slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 4,
+                spaceBetween: 20,
+                speed: 300,
+                navigation: {
+                    prevEl: ".blog-feed__nav .swiper-button-prev",
+                    nextEl: ".blog-feed__nav .swiper-button-next"
                 },
                 breakpoints: {
                     320: {

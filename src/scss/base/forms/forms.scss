@@ -75,6 +75,10 @@ textarea {
 		color: #fff;
 		font-size: 18px;
 
+		&:hover {
+			border-bottom: 1px solid var(--zelenyy);
+		}
+
 		.has-error & {
 			border-bottom: 1px solid var(--red-error);
 		}

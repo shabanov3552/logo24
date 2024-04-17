@@ -1,0 +1,121 @@
+@@include('html/_header.htm',{
+"title":"О компании",
+"modClass":""
+})
+<main class="page">
+   <div class="about">
+      <div class="about__container">
+         @@include('html/_breadcrumbs.htm',{})
+         <div class="about__grid">
+            <div class="about__main">
+               <h1 class="about__title page-title">О компании</h1>
+               <div class="about__text">
+                  <p><b>24ЛОГО</b> - команда профессионалов, обладающая богатым опытом в области дизайна и нанесения логотипов. Мы предлагаем широкий выбор услуг по&nbsp;персонализации одежды для различных бизнесов, мероприятий и организаций.</p>
+                  <p>Для нас важно не только качество выпускаемой продукции, но и комплексный сервис для клиента, нацеленный на долгосрочные отношения.
+                     Работа по созданию логотипа является достаточно ответственной задачей и ведется в соответствии с требованиями, предъявляемыми к разработке фирменного стиля компанией заказчика и базовыми требованиями</p>
+               </div>
+            </div>
+            <div class="about__image-ibg"><img src="img/about-block-ibg.png" alt=""></div>
+         </div>
+      </div>
+   </div>
+
+   <div class="mp-features mp-features_white">
+      <div class="mp-features__container">
+         <div class="mp-features__item">
+            <div class="mp-features__image-ibg"><img src="@img/features/13.svg" alt=""></div>
+            <div class="mp-features__text">Гарантия качества</div>
+         </div>
+         <div class="mp-features__item">
+            <div class="mp-features__image-ibg"><img src="@img/features/02.svg" alt=""></div>
+            <div class="mp-features__text">Быстрые сроки исполнения</div>
+         </div>
+         <div class="mp-features__item">
+            <div class="mp-features__image-ibg"><img src="@img/features/03.svg" alt=""></div>
+            <div class="mp-features__text">Акции и скидки</div>
+         </div>
+      </div>
+   </div>
+
+   <div class="work-examples work-examples_grey">
+      <div class="work-examples__container">
+         <h2 class="work-examples__title">Примеры работ</h2>
+         <div class="work-examples__slider swiper">
+            <div class="work-examples__nav">
+               <button type="button" class="swiper-button-prev">
+                  <svg>
+                     <use xlink:href="img/icons/icons.svg#arrow-slider-left"></use>
+                  </svg>
+               </button>
+               <button type="button" class="swiper-button-next">
+                  <svg>
+                     <use xlink:href="img/icons/icons.svg#arrow-slider-right"></use>
+                  </svg>
+               </button>
+            </div>
+            <div class="work-examples__wrapper swiper-wrapper">
+               <div class="work-examples__slide swiper-slide">
+                  <a href="" class="work-examples__image-ibg"><img src="@img/work-examples/01.png" alt=""></a>
+               </div>
+               <div class="work-examples__slide swiper-slide">
+                  <a href="" class="work-examples__image-ibg"><img src="@img/work-examples/02.png" alt=""></a>
+               </div>
+               <div class="work-examples__slide swiper-slide">
+                  <a href="" class="work-examples__image-ibg"><img src="@img/work-examples/03.png" alt=""></a>
+               </div>
+               <div class="work-examples__slide swiper-slide">
+                  <a href="" class="work-examples__image-ibg"><img src="@img/work-examples/04.png" alt=""></a>
+               </div>
+               <div class="work-examples__slide swiper-slide">
+                  <a href="" class="work-examples__image-ibg"><img src="@img/work-examples/02.png" alt=""></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="page-form">
+      <div class="page-form__container">
+         <div class="page-form__main">
+            <h2 class="page-form__title">Оставить заявку</h2>
+            <div class="page-form__text">Оставьте контакт и расскажите, что необходимо и мы свяжемся с Вами в ближайшее время</div>
+            <form action="" class="page-form__form" data-parsley-validate data-parsley-trigger="change">
+               <div class="form__line">
+                  <label for="" class="form__label">Ваше имя*</label>
+                  <input required id="" type="text" name="" class="form__input">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">Телефон*</label>
+                  <input required id="" type="tel" name="" class="form__input js_phone">
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__line">
+                  <label for="" class="form__label">Ваше сообщение</label>
+                  <textarea id="" autocomplete="off" name="" class="form__input"></textarea>
+                  <svg class="form__clear-svg">
+                     <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                  </svg>
+               </div>
+               <div class="form__check">
+                  <label class="checkbox">
+                     <input required class="checkbox__input" type="checkbox" value="1" name="consent" checked>
+                     <span class="checkbox__chunk"></span>
+                     <span class="checkbox__text">Я даю свое <a href="">согласие на обработку персональных данных</a></span>
+                  </label>
+               </div>
+               <button type="submit" class="form__button btn-green">Заказать печать</button>
+            </form>
+         </div>
+         <div class="page-form__image-ibg">
+            <img src="@img/page-form-bg.png" alt="">
+            <img src="@img/page-form-fig.svg" alt="" class="page-form__fig-img">
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})
