@@ -293,6 +293,12 @@
 .mp-features {
    padding: rem(100) 0;
    background: var(--fon);
+
+   .delivery & {
+      background: transparent;
+      padding: 0;
+   }
+
    // .mp-features_white
 
    &_white {
@@ -328,6 +334,10 @@
 
       &.no-grid {
          display: block;
+      }
+
+      .delivery & {
+         padding: 0;
       }
 
       @media (max-width:$md) {

@@ -1,0 +1,56 @@
+@@include('html/_header.htm',{
+"title":"Доставка и оплата",
+"modClass":""
+})
+<main class="page">
+   <div class="delivery">
+      <div class="delivery__container">
+         @@include('html/_breadcrumbs.htm',{})
+         <h1 class="delivery__title page-title">Способы доставки</h1>
+         <div class="mp-features">
+            <div class="mp-features__container">
+               <div class="mp-features__item">
+                  <div class="mp-features__image-ibg"><img src="@img/mp-qa/01.svg" alt=""></div>
+                  <div class="mp-features__text">Бесплатно из пунктов выдачи заказов Почты России</div>
+               </div>
+               <div class="mp-features__item">
+                  <div class="mp-features__image-ibg"><img src="@img/mp-qa/02.svg" alt=""></div>
+                  <div class="mp-features__text">Транспортной компанией по России.*</div>
+               </div>
+               <div class="mp-features__item">
+                  <div class="mp-features__image-ibg"><img src="@img/mp-qa/03.svg" alt=""></div>
+                  <div class="mp-features__text">Самовывоз из нашего офиса или со склада отгрузки</div>
+               </div>
+            </div>
+         </div>
+         <div class="delivery__text">*
+            Бесплатная доставка до транспортной компании осуществляется при заказе
+            от 20 000 руб. (Стоимость доставки от ТК до Вас рассчитывается по тарифам транспортных компаний).
+         </div>
+      </div>
+   </div>
+   <div class="payment">
+      <div class="payment__container">
+         <h2 class="payment__title page-title">Способы оплаты</h2>
+         <div class="payment__list">
+            <div class="payment__item">
+               <div class="payment__item-name">Оплата при получении</div>
+               <div class="payment__item-text">
+                  <p>Курьеру или в нашем офисе в случае самовывоза</p>
+               </div>
+            </div>
+            <div class="payment__item">
+               <div class="payment__item-name">Счет на оплату</div>
+               <div class="payment__item-text">
+                  <p>После заказа мы формируем счет, который вы можете оплатить:</p>
+                  <ul>
+                     <li>в любом удобном для вас отделении банка</li>
+                     <li>в интернет-банке вашего банка</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

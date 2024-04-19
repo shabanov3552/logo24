@@ -1565,3 +1565,137 @@ table {
       }
    }
 }
+
+
+
+.delivery {
+   background: var(--seryy-svetlyy);
+   padding-top: rem(60);
+   padding-bottom: rem(80);
+
+   // .delivery__container
+
+   &__container {}
+
+   // .delivery__title
+
+   &__title {
+      margin-bottom: rem(80);
+
+      @media (max-width:$md) {
+         margin-bottom: rem(40);
+      }
+   }
+
+   // .delivery__text
+
+   &__text {
+      margin-top: rem(80);
+      max-width: 690px;
+      line-height: 120%;
+      font-weight: 500;
+      font-size: 16px;
+
+      @media (max-width:$md) {
+         margin-top: rem(40);
+      }
+   }
+}
+
+.payment {
+   padding: rem(100) 0;
+   background: url('@img/payment-bg.svg') bottom right no-repeat;
+
+   @media (max-width:$md) {
+      padding: rem(60) 0;
+   }
+
+   // .payment__container
+
+   &__container {}
+
+   // .payment__title
+
+   &__title {
+      color: var(--seryy-temnyy);
+      margin-bottom: rem(80);
+
+      @media (max-width:$md) {
+         margin-bottom: rem(20);
+      }
+   }
+
+   // .payment__list
+
+   &__list {
+      display: grid;
+      gap: 40px;
+      max-width: 1254px;
+
+      @media (max-width:$xxl) {
+         max-width: 963px;
+      }
+   }
+
+   // .payment__item
+
+   &__item {
+      background: var(--seryy-temnyy);
+      border-radius: 20px;
+      padding: rem(60);
+
+      @media (max-width:$md) {
+         padding: rem(40) rem(30);
+      }
+   }
+
+   // .payment__item-name
+
+   &__item-name {
+      font-family: var(--second-family);
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 120%;
+      margin-bottom: rem(40);
+
+      @media (max-width:$md) {
+         margin-bottom: rem(20);
+      }
+   }
+
+   // .payment__item-text
+
+   &__item-text {
+      font-weight: 500;
+      font-size: 24px;
+
+      @media (max-width:$md) {
+         font-size: 16px;
+      }
+
+      & :not(:last-child) {
+         margin-bottom: rem(20);
+      }
+
+      ul {
+
+         li {
+            padding-left: rem(25);
+            position: relative;
+            margin-bottom: rem(10);
+
+            &::before {
+               content: '';
+               display: block;
+               position: absolute;
+               left: 0;
+               top: 9px;
+               width: 10px;
+               height: 10px;
+               border-radius: 50%;
+               background: var(--zelenyy);
+            }
+         }
+      }
+   }
+}
