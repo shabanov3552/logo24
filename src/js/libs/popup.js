@@ -100,6 +100,8 @@ class Popup {
 		}
 		this.bodyLock = false;
 		this.options.init ? this.initPopups() : null
+
+		window.popup = this // раз уж синглетон
 	}
 	initPopups() {
 		this.popupLogging(`Проснулся`);
@@ -352,7 +354,8 @@ class Popup {
 		if (!this.isOpen && this.lastFocusEl) {
 			this.lastFocusEl.focus();
 		} else {
-			focusable[0].focus();
+			let focusElement = this.targetOpen.element.querySelector('input') || focusable[0];
+			focusElement.focus();
 		}
 	}
 	// Функция вывода в консоль

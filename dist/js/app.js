@@ -3725,6 +3725,7 @@
                 };
                 this.bodyLock = false;
                 this.options.init ? this.initPopups() : null;
+                window.popup = this;
             }
             initPopups() {
                 this.popupLogging(`Проснулся`);
@@ -3895,7 +3896,10 @@
             }
             _focusTrap() {
                 const focusable = this.previousOpen.element.querySelectorAll(this._focusEl);
-                if (!this.isOpen && this.lastFocusEl) this.lastFocusEl.focus(); else focusable[0].focus();
+                if (!this.isOpen && this.lastFocusEl) this.lastFocusEl.focus(); else {
+                    let focusElement = this.targetOpen.element.querySelector("input") || focusable[0];
+                    focusElement.focus();
+                }
             }
             popupLogging(message) {
                 this.options.logging ? functions_FLS(`[Попапос]: ${message}`) : null;
