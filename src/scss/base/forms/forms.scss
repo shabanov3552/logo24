@@ -165,11 +165,75 @@ textarea {
 	position: absolute;
 	padding: rem(10) 0;
 	color: var(--red-error);
+
 	// margin-bottom: rem(-20);
+	.form__line_file & {
+		top: 25px;
+		left: 40px;
+		font-size: 14px;
+		font-weight: 500;
+	}
 }
 
 //</FORM>
+//#region 
 
+.input {
+
+	// .input__file
+
+	&__file {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		clip: rect(0 0 0 0);
+		overflow: hidden;
+	}
+
+	// .input__file-button
+
+	&__file-button {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		cursor: pointer;
+
+		&:hover {
+			color: var(--zelenyy);
+		}
+	}
+
+	// .input__file-icon-wrapper
+
+	&__file-icon-wrapper {}
+
+	// .input__file-icon
+
+	&__file-icon {
+		width: 30px;
+		height: 30px;
+
+		.clear-btn & {
+			width: 20px;
+			height: 20px;
+		}
+
+		use {
+			fill: none;
+			stroke: var(--zelenyy);
+
+			.clear-btn & {
+				fill: var(--zelenyy);
+			}
+		}
+	}
+
+	// .input__file-button-text
+
+	&__file-button-text {}
+}
+
+//#endregion
 
 // <CHECK>
 // Снипет (HTML): chk

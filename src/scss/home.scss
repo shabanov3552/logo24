@@ -403,6 +403,17 @@
       @media (max-width:$lg) {
          font-size: 24px;
       }
+
+      // .mp-features__text_big
+
+      &_big {
+         font-size: 40px;
+
+         @media (max-width:$lg) {
+            font-size: 40px;
+         }
+      }
+
    }
 }
 

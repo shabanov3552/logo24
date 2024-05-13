@@ -119,6 +119,14 @@
 	color: var(--seryy-temnyy);
 	padding-right: rem(140);
 
+	ul {
+		padding-left: rem(25);
+
+		li {
+			list-style: disc;
+		}
+	}
+
 	@media (max-width:$md) {
 		font-size: 16px;
 		padding-right: rem(80);

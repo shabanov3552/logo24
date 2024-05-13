@@ -115,10 +115,6 @@
       height: 300px;
       flex: 0 0 300px;
       margin-bottom: rem(25);
-
-      @media (max-width:$xs) {
-         margin: 0 -30px;
-      }
    }
 
    // .card-more__content
@@ -1113,7 +1109,9 @@ table {
       }
 
       & * {
-         padding-bottom: rem(30);
+         &:not(:last-child) {
+            padding-bottom: rem(30);
+         }
       }
 
       h3 {
@@ -1130,7 +1128,11 @@ table {
 
    // .rules-block__more
 
-   &__more {}
+   &__more {
+      ._showmore-active & {
+         padding-top: rem(20);
+      }
+   }
 
    // .rules-block__image-ibg
 

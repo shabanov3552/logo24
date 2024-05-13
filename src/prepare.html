@@ -130,6 +130,17 @@
                      <use xlink:href="img/icons/icons.svg#input_clear"></use>
                   </svg>
                </div>
+               <div class="form__line form__line_file">
+                  <input type="file" name="file" id="input__file" class="input input__file" required>
+                  <label for="input__file" class="input__file-button">
+                     <span class="input__file-icon-wrapper">
+                        <svg class="input__file-icon">
+                           <use xlink:href="img/icons/icons.svg#icon_file"></use>
+                        </svg>
+                     </span>
+                     <div class="input__file-button-text">Прикрепить файл</div>
+                  </label>
+               </div>
                <div class="form__check">
                   <label class="checkbox">
                      <input required class="checkbox__input" type="checkbox" value="1" name="consent" checked>
@@ -139,6 +150,63 @@
                </div>
                <button type="submit" class="form__button btn-green">Заказать печать</button>
             </form>
+            <script>
+               const input = document.querySelector('.input__file');
+               const preview = document.querySelector('.input__file-button-text');
+               const fileIcon = document.querySelector('.input__file-icon-wrapper');
+               let clsBtn = clearBtnCreate();
+               input.style.opacity = 0;
+
+               input.addEventListener('change', insertFileName);
+               clsBtn.addEventListener('click', fileRemove);
+
+               function fileRemove(e) {
+                  e.preventDefault();
+                  input.value = '';
+                  clsBtn.remove();
+                  preview.textContent = `Прикрепить файл`;
+                  preview.before(fileIcon);
+               }
+
+               function clearBtnCreate() {
+                  let clearBtn = document.createElement('span');
+                  clearBtn.classList.add('clear-btn');
+                  clearBtn.insertAdjacentHTML(
+                     'beforeend',
+                     `<svg class="input__file-icon">
+                        <use xlink:href="img/icons/icons.svg#icon_file"></use>
+                     </svg>`
+                  );
+                  return clearBtn
+               }
+
+
+               function insertFileName() {
+                  while (preview.firstChild) {
+                     preview.removeChild(preview.firstChild);
+                  }
+
+                  const curFiles = input.files;
+                  if (curFiles.length === 0) {
+                     const para = document.createElement('p');
+                     para.textContent = 'Не выбрано ни одного файла';
+                     preview.appendChild(para);
+                  } else {
+                     fileIcon.remove();
+                     preview.before(clsBtn);
+                     const list = document.createElement('ul');
+                     preview.appendChild(list);
+                     // list.style.paddingLeft = "20px";
+                     for (const file of curFiles) {
+                        const listItem = document.createElement('li');
+                        const para = document.createElement('p');
+                        para.textContent = file.name;
+                        listItem.appendChild(para);
+                        list.appendChild(listItem);
+                     }
+                  }
+               }
+            </script>
          </div>
          <div class="page-form__image-ibg">
             <img src="@img/page-form-bg.png" alt="">

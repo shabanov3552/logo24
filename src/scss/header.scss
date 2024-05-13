@@ -3,6 +3,8 @@
 .header {
 	background: var(--seryy-temnyy);
 	padding: rem(20) 0;
+	position: relative;
+	z-index: 8;
 
 	@media (max-width:$md) {
 		padding: rem(10) 0;
@@ -168,31 +170,46 @@
 	// .menu__item
 
 	&__item {
-		@media (max-width:$xl) {
-			width: 100%;
-		}
+		position: relative;
 
-		.dropdown__block {
-			z-index: 2;
-			left: -30px;
-			top: calc(100% + 13px);
+		&.menu__item_open {
+			& .menu__item-block {
+				opacity: 1;
+				visibility: visible;
 
-			@media (max-width:$xl) {
-				position: static;
-				height: 0;
-				background: rgba(81, 81, 81, 0.3);
-				border-radius: 0;
-				min-width: 0;
-			}
-		}
-
-		&._dd-active {
-			.dropdown__block {
 				@media (max-width:$xl) {
 					height: auto;
 				}
 			}
 
+			& .menu__link-svg {
+				transform: rotate(-180deg);
+
+				use {
+					stroke: var(--zelenyy);
+				}
+			}
+
+			& .menu__link {
+				color: var(--zelenyy);
+			}
+		}
+
+		@media (max-width:$xl) {
+			width: 100%;
+		}
+	}
+
+	// .menu__item-chunk
+
+	&__item-chunk {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 5px;
+
+		@media (max-width:$xl) {
+			gap: 20px;
 		}
 	}
 
@@ -210,25 +227,51 @@
 
 			&.dropdown__button {}
 		}
+	}
 
-		._dd-active & {
-			@media (min-width:$xl) {
-				font-weight: 700;
-				color: var(--zelenyy);
+	// .menu__link-svg
 
-				&::after {
-					background: url("../img/icons/arrow-dropdown-active.svg") center no-repeat;
-				}
-			}
+	&__link-svg {
+		transition: all 0.3s ease 0s;
+		width: 20px;
+		height: 20px;
 
-			@media (max-width:$xl) {
-				background: var(--seryy-svetlyy);
-			}
+		@media (max-width:$xl) {
+			width: 45px;
+			height: 45px;
+		}
+
+		use {
+			fill: none;
+			stroke: #fff;
+		}
+	}
+
+	// .menu__item-block
+
+	&__item-block {
+		position: absolute;
+		transition: all 0.3s ease 0s;
+		opacity: 0;
+		visibility: hidden;
+		z-index: 2;
+		left: -30px;
+		top: 100%;
+		padding-top: rem(13);
+
+		@media (max-width:$xl) {
+			position: static;
+			height: 0;
+			background: rgba(81, 81, 81, 0.3);
+			border-radius: 0;
+			min-width: 0;
+			padding-top: 0;
 		}
 	}
 }
 
 //========================================================================================================================================================
+
 .submenu {
 	background: #f5f5f5;
 	color: #000;
@@ -265,6 +308,19 @@
 
 	&__block {}
 
+	// .submenu__nav-chunk
+
+	&__nav-chunk {
+
+		@media (max-width:$xl) {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			justify-content: center;
+
+		}
+	}
+
 	// .submenu__nav-link
 
 	&__nav-link {
@@ -281,21 +337,10 @@
 		}
 
 		@media (max-width:$xl) {
-			&[data-parent] {
-				display: flex;
-				justify-content: center;
-				gap: 10px;
+			padding: rem(40) 0;
 
-				&:after {
-					content: "";
-					display: block;
-					width: 24px;
-					height: 24px;
-					background: url("../img/icons/arrow-dropdown.svg") center no-repeat;
-					transition: all 0.3s ease 0s;
-				}
-
-				&._sub-menu-active {
+			[data-submenu-drop] & {
+				._sub-menu-open & {
 					&::after {
 						transform: rotate(-180deg);
 					}
@@ -304,32 +349,64 @@
 		}
 	}
 
+	// .submenu__nav-link-svg
+
+	&__nav-link-svg {
+		transition: all 0.3s ease 0s;
+		width: 45px;
+		height: 45px;
+
+		._sub-menu-open & {
+			transform: rotate(-180deg);
+		}
+
+		@media (min-width:$xl) {
+			display: none;
+		}
+
+		use {
+			fill: none;
+			stroke: #fff;
+		}
+	}
+
 	// .submenu__links
 
 	&__links {
 		position: absolute;
-		top: 0;
+		top: 13px;
 		left: calc(100% - 20px);
 		background: #e6e7e8;
-		height: 100%;
+		height: calc(100% - 13px);
 		overflow: auto;
 		border-radius: 0 20px 20px 0;
 		flex-direction: column;
 		min-width: 417px;
 		padding: rem(20) 0;
+		display: flex;
+		opacity: 0;
+		visibility: hidden;
 		@extend %hidescroll;
 
 		@media (max-width:$xl) {
+			height: 0;
 			position: static;
 			background: var(--seryy-temnyy);
 			min-width: 0;
 			border-radius: 0;
 			overflow: visible;
 			max-height: 100%;
+			padding: 0;
 		}
 
-		&._sub-menu-open {
-			display: flex;
+		._sub-menu-open & {
+			opacity: 1;
+			visibility: visible;
+
+			@media (max-width:$xl) {
+				height: auto;
+
+			}
 		}
 	}
 
@@ -350,7 +427,6 @@
 }
 
 //========================================================================================================================================================
-
 
 //Burger
 
