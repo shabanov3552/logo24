@@ -4420,7 +4420,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     padding: 1.875rem
   }
   .popup__title {
-    font-size: 25px
+    font-size: 40px
   }
   .thanks-block img {
     width: 100px
@@ -4912,6 +4912,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 }
 @media (max-width:23.43625em) {
+  .popup__title {
+    font-size: 30px
+  }
   .pagging__li {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 30px;
